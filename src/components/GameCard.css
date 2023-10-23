@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&family=Sora:wght@600&display=swap');
+
+*{
+    font-family: Poppins, sans-serif;
+}
+.gameCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 500px;
+    background-color: #352F44;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    height: 600px;
+}
+
+.gameTitle{
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #B9B4C7;
+}
+
+.gameImage{
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.addToCart{
+    background-color: #946dff;
+    width: fit-content;
+    padding: .5rem 2rem;
+    align-self: flex-start;
+    color: white;
+    border-radius: 3px 0px 0px 3px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    transition: background-color .2s;
+}
+
+.addToCart:hover{
+    cursor: pointer;
+    background-color: #6229ff;
+}
+
+.platforms p{
+    color: white;
+}
+
+.platforms-list{
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.platform-name{
+    background-color: #FAF0E6;
+    border-radius: 1rem;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    transition: background-color .2s;
+}
+
+.platform-name:hover{
+    cursor: pointer;
+    background-color: #ffa750;
+}
+
+.cardButtonSection{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+}
+
+.quantity{
+    display: flex;
+    align-items: center;
+    background-color: #6229ff;
+    height: 100%;    
+    border-radius: 0px 3px 3px 0px;
+    padding: 0 .5rem;
+}

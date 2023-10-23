@@ -1,0 +1,35 @@
+.shop{
+    min-height: 100vh;
+    background-color: #5C5470;
+}
+
+.searchBar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAF0E6;
+    width: 50%;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin: auto;
+    gap: 1rem;
+}
+
+.searchBar input{
+    width: 25%;
+    padding-left: .5rem;
+}
+
+.shopTitle{
+    display: flex;
+    flex-direction: column;
+}
+
+.gamesContainer{
+    padding: 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem 1rem;
+    align-items: center;
+    justify-content: center;
+}
