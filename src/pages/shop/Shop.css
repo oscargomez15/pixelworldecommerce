@@ -7,22 +7,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FAF0E6;
     width: 50%;
     padding: 1rem 2rem;
     border-radius: 1rem;
     margin: auto;
     gap: 1rem;
+    color: white;
 }
 
 .searchBar input{
-    width: 25%;
+    width: 50%;
+    height: 2.5rem;
+    border-radius: .5rem;
     padding-left: .5rem;
-}
-
-.shopTitle{
-    display: flex;
-    flex-direction: column;
+    outline: none;
 }
 
 .gamesContainer{
