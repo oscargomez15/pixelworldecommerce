@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&family=Sora:wght@600&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Poppins, sans-serif;
 }
 
 .navbar{
     width: 100%;
-    height: 5vh;
+    height: 6vh;
     background-color: black;
     display: flex;
     justify-content: flex-end;
@@ -17,16 +20,30 @@
     margin-right: 50px;
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .links a{
     color:white;
     text-decoration: none;
-    margin-left: 20px;
     font-size: 2rem;
-    font-family: Verdana, sans-serif;
+    font-weight: 800;
+    transition: text-shadow .2s;
+}
+
+.links a:hover{
+    text-shadow: 2px 4px #6229ff;
+}
+
+.cartBtn{
+    transition: background-color .2s;
+}
+
+.cartBtn:hover{
+    background-color: #6229ff;
 }
 
 .links a:last-of-type{
-    padding-right:2rem;
+    padding: 0 1rem;
+    border: 2px solid rgb(202, 202, 202);
 }

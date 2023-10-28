@@ -1,0 +1,120 @@
+.cart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #5C5470;
+    min-height: 94vh;
+    padding-top: 3rem;
+}
+
+.cart h1{
+    color: white;
+}
+
+.cartItems{
+    margin-top: 2rem;
+    width: 60%;
+}
+
+.cartItem{
+    background-color: #352F44;
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    gap: 2rem;
+    border-radius: 1rem;
+}
+
+.cartItem img{
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 1rem;
+}
+
+.cartItemTitle{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: white;
+}
+
+.cartItemTitle hr{
+    background-color: #d4d2da;
+    border: none;
+    height: .1rem;
+}
+
+.itemTitle{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.quantityContainer{
+    margin-top: .5rem;
+}
+
+.cartItemInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.infoBox{
+    width: fit-content;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0 .5rem;
+    margin-top: 1rem;
+    font-size: 1.2rem ;
+}
+
+.modifyQuantity {
+    display: inline;
+    border-radius: .2rem;
+    font-weight: 800;
+    margin-right: 0.5rem;
+    background-color: #6229ff;
+    color: #FFF;
+    padding: 0 .5rem;
+    font-size: .9rem;
+    transition: background-color .2s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.modifyQuantity:last-of-type{
+    margin-left: 0.8rem;
+}
+
+.modifyQuantity:hover{
+    cursor: pointer;
+    background-color: #895eff;
+}
+
+.infoText{
+    font-weight: 600;
+}
+
+.removeBtn{
+    color: white;
+    padding: 0.2rem 0rem;
+    text-decoration: none;
+    margin-top: .5rem;
+}
+
+.removeBtn:hover{
+    text-decoration: underline;
+}
+
+.checkoutBtn{
+    background-color: #6229ff;
+    color: white;
+    border-radius: 1rem;
+    padding: .5rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: background-color .2s;
+}
+
+.checkoutBtn:hover{
+    background-color: #895eff;
+}
