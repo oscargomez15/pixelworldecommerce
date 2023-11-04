@@ -16,6 +16,18 @@
     align-items: center;
 }
 
+.navbar a{
+    color:white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 800;
+    transition: text-shadow .2s;
+}
+
+.navbar a:hover{
+    text-shadow: 2px 4px #6229ff;
+}
+
 .links{
     margin-right: 50px;
     display: flex;
@@ -46,4 +58,38 @@
 .links a:last-of-type{
     padding: 0 1rem;
     border: 2px solid rgb(202, 202, 202);
+}
+
+.searchContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin: auto;
+    gap: 1rem;
+    color: white;
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: row;
+}
+.searchBar input{
+    height: 2.5rem;
+    border-radius: .5rem 0 0 .5rem ;
+    padding-left: .5rem;
+    outline: none;
+    width: 600px;
+}
+
+.searchButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6229ff;
+    border-radius: 0 .5rem .5rem 0;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 50px;
 }

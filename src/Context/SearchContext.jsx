@@ -9,7 +9,7 @@ export const SearchContextProvider = (props) => {
         setSearch(inputValue);
     }
 
-    const resetSearch = () => {
+    const clearSearch = () => {
         setSearch('');
     }
 
@@ -21,7 +21,7 @@ export const SearchContextProvider = (props) => {
          }
     }
 
-    const contextValue = {modifySearch, resetSearch, getSearch};
+    const contextValue = {modifySearch, clearSearch, getSearch};
 
   return (
         <SearchContext.Provider value={contextValue}>

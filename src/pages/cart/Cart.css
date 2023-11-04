@@ -1,23 +1,29 @@
-.cart{
+.cartContainer{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #5C5470;
+    background-color: white;
     min-height: 94vh;
     padding-top: 3rem;
 }
 
-.cart h1{
-    color: white;
+.cartContainer h1{
+    color: black;
+}
+
+.cart{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 5rem;
 }
 
 .cartItems{
-    margin-top: 2rem;
     width: 60%;
 }
 
 .cartItem{
-    background-color: #352F44;
+    background-color: black;
     display: flex;
     width: 100%;
     padding: 1rem;
@@ -98,10 +104,52 @@
     padding: 0.2rem 0rem;
     text-decoration: none;
     margin-top: .5rem;
+    width: fit-content;
 }
 
 .removeBtn:hover{
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.breakdownContainer{
+    width: 20%;
+}
+
+.breakdown{
+    background-color: black;
+    width: 100%;
+    min-height: 200px;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+
+}
+
+.itemRow{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-row: auto;
+}
+
+.itemRow:first-of-type{
+    border-top: none;
+}
+
+.itemRow p:first-of-type{
+    justify-self: flex-start;
+}
+
+.divider {
+    border-top: white .4rem solid;
+}
+
+.breakdown hr{
+    border: .1rem solid rgb(155, 155, 155);
+}
+
+.itemRow p:last-of-type{
+    justify-self: flex-end;
 }
 
 .checkoutBtn{
@@ -113,8 +161,15 @@
     text-decoration: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     transition: background-color .2s;
+    width: fit-content;
+    margin: 1rem auto;
 }
 
 .checkoutBtn:hover{
     background-color: #895eff;
+    cursor: pointer;
+}
+
+.itemRow{
+    color: white;
 }

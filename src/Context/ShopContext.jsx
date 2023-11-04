@@ -3,8 +3,9 @@ import React, { createContext, useState } from 'react'
 export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props) => {
-    const [cartItems, setCartItems] = useState([]);
 
+    const [cartItems, setCartItems] = useState([]);
+    const [lastGameAdded, setLastGame] = useState('');
 
     const getProductQuantity = (itemId) => {
         const quantity = cartItems.find(item => item.id === itemId)?.quantity
@@ -15,9 +16,38 @@ export const ShopContextProvider = (props) => {
             return quantity;
     }
 
-    const addToCart = (itemId, gameName, image) => {
+    const getCartSubtotal = () => {
+
+        let subtotal = 0;
+
+        cartItems.map(product => {
+            subtotal = subtotal + (product.gamePrice * product.quantity);
+        })
+
+        return subtotal;
+    }
+
+    const getCartTax = () => {
+        let cartTax = 0;
+        cartTax = (getCartSubtotal() * Number(0.065)).toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2});
+        return cartTax;
+    }
+
+    const getTotal = () => {
+        let cartTotal = 0;
+        cartTotal = parseFloat(getCartSubtotal()) + parseFloat(getCartTax());
+        return cartTotal;
+    }
+
+    const getLastGameAdded = () =>{
+        return lastGameAdded;
+    }
+
+    const addToCart = (itemId, gameName, image, price) => {
         const quantity = getProductQuantity(itemId);
-        
+
+        setLastGame(gameName);
+
         if (quantity === 0){
             setCartItems(
                 [
@@ -26,7 +56,8 @@ export const ShopContextProvider = (props) => {
                         id:itemId,
                         name: gameName,
                         gameImage: image,
-                        quantity: 1
+                        quantity: 1,
+                        gamePrice:price 
                     }
                 ]
             )
@@ -38,12 +69,15 @@ export const ShopContextProvider = (props) => {
                     ? {...item, quantity: item.quantity + 1 }
                     : item))
         }
-
     }
 
-    const removeFromCart = (itemId) => {
-        //This would need to be modified later on. Just understanding the tutorial first.
-        setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1}))
+    const deleteFromCart = (itemId) => {
+        setCartItems(
+            cartProduct => 
+            cartProduct.filter (currentProduct => {
+                return currentProduct.id != itemId; 
+            } )
+        );
     }
 
     const addOneToQuantity = (itemId) => {
@@ -56,15 +90,21 @@ export const ShopContextProvider = (props) => {
     }
 
     const removeOneToQuantity = (itemId) => {
-        setCartItems(
-            cartItems.map(
-                (item) => 
-                item.id === itemId 
-                ? {...item, quantity: item.quantity - 1 }
-                : item))
+        const itemQuantity = getProductQuantity(itemId);
+        if (itemQuantity === 1){
+            deleteFromCart(itemId);
+        }else{
+            setCartItems(
+                cartItems.map(
+                    (item) => 
+                    item.id === itemId 
+                    ? {...item, quantity: item.quantity - 1 }
+                    : item))
+        }
+
     }
 
-    const contextValue = {cartItems, getProductQuantity, addToCart, addOneToQuantity, removeFromCart, removeOneToQuantity};
+    const contextValue = {cartItems, lastGameAdded, getCartSubtotal, getCartTax, getTotal, getProductQuantity, addToCart, addOneToQuantity, deleteFromCart, removeOneToQuantity};
 
   return (
     <ShopContext.Provider value={contextValue}>

@@ -1,5 +1,5 @@
 :root{
-    --skeletonBg: rgb(185, 180, 199);
+    --skeletonBg: rgb(161, 161, 161);
 }
 
 .skeletonContainer{
@@ -17,7 +17,7 @@
     gap: 1rem;
     padding: 1rem;
     width: 500px;
-    background-color: #352F44;
+    background-color: black;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     height: 600px;
