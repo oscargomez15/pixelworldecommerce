@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/pixelworldecommerce/static/css/main.eeac2483.css",
-    "main.js": "/pixelworldecommerce/static/js/main.dd8f00a4.js",
+    "main.css": "/pixelworldecommerce/static/css/main.63ee069c.css",
+    "main.js": "/pixelworldecommerce/static/js/main.c57f03e7.js",
     "index.html": "/pixelworldecommerce/index.html",
-    "main.eeac2483.css.map": "/pixelworldecommerce/static/css/main.eeac2483.css.map",
-    "main.dd8f00a4.js.map": "/pixelworldecommerce/static/js/main.dd8f00a4.js.map"
+    "main.63ee069c.css.map": "/pixelworldecommerce/static/css/main.63ee069c.css.map",
+    "main.c57f03e7.js.map": "/pixelworldecommerce/static/js/main.c57f03e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.eeac2483.css",
-    "static/js/main.dd8f00a4.js"
+    "static/css/main.63ee069c.css",
+    "static/js/main.c57f03e7.js"
   ]
 }
