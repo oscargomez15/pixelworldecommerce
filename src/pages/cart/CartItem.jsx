@@ -15,7 +15,7 @@ export const CartItem = ({id, name, image, quantity, price}) => {
         <p className='priceText infoBox'> <span className='infoText'> ${price}</span></p>
         <div className='quantityContainer'>
               <span className='modifyQuantity' onClick={() => removeOneToQuantity(id)}>-</span>
-              <span className='infoText'> Quantity </span> : {quantity}
+              <span className='infoText'> Quantity: </span> {quantity}
               <span className='modifyQuantity' onClick={() => addOneToQuantity(id)}>+</span>
         </div>
         <p className='removeBtn' onClick={() => deleteFromCart(id)}> <span className='infoText'> X </span> Remove </p>

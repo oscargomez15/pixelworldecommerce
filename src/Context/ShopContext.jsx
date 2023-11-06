@@ -6,6 +6,7 @@ export const ShopContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState([]);
     const [lastGameAdded, setLastGame] = useState('');
+    const [isAlertVisible, setAlert] = useState(false);
 
     const getProductQuantity = (itemId) => {
         const quantity = cartItems.find(item => item.id === itemId)?.quantity
@@ -47,6 +48,12 @@ export const ShopContextProvider = (props) => {
         const quantity = getProductQuantity(itemId);
 
         setLastGame(gameName);
+        
+        setAlert(true);
+
+        setTimeout(() => {
+            setAlert(false);
+        }, 4000);
 
         if (quantity === 0){
             setCartItems(
@@ -104,7 +111,7 @@ export const ShopContextProvider = (props) => {
 
     }
 
-    const contextValue = {cartItems, lastGameAdded, getCartSubtotal, getCartTax, getTotal, getProductQuantity, addToCart, addOneToQuantity, deleteFromCart, removeOneToQuantity};
+    const contextValue = {cartItems, lastGameAdded, isAlertVisible, getCartSubtotal, getCartTax, getTotal, getProductQuantity, addToCart, addOneToQuantity, deleteFromCart, removeOneToQuantity};
 
   return (
     <ShopContext.Provider value={contextValue}>

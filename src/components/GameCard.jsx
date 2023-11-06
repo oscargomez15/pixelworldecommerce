@@ -16,7 +16,10 @@ export const GameCard = ({id, name, image, platforms, release}) => {
         priceBasedOnRelease = 59.99;
     }
 
-
+    const handleClick = (e) => {
+        e.target.classList.add("platform-name-selected");
+    }
+    
   return (
     <div className='gameCard'>
         <h1 className='gameTitle'>{name}</h1>
@@ -26,13 +29,13 @@ export const GameCard = ({id, name, image, platforms, release}) => {
             <p>Choose the Platform:</p>
             <div className='platforms-list'>
                 {platforms?.map(platform => {
-                    return <h1 className='platform-name' key={platform.platform.name}> {platform.platform.name} </h1>
+                    return <h1 className='platform-name' key={platform.platform.name} onClick={handleClick}> {platform.platform.name} </h1>
                 })}
             </div>
         </div> 
 
         <div className='cardButtonSection'>
-            <button className='addToCart' onClick={() => addToCart(id,name,image, priceBasedOnRelease)}> Add to Cart </button>
+            <button tabIndex='0' className='addToCart' onClick={() => addToCart(id,name,image, priceBasedOnRelease)}> Add to Cart </button>
                 {itemAmount > 0 &&  <div className='quantity'> <p> {itemAmount} </p></div>}   
         </div>
     </div>

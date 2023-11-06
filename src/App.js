@@ -5,6 +5,7 @@ import  Shop  from "./pages/shop/Shop"
 import  Cart  from "./pages/cart/Cart"
 import { ShopContextProvider } from "./Context/ShopContext";
 import { SearchContextProvider } from "./Context/SearchContext";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -14,9 +15,10 @@ function App() {
           <Router>
             <Navbar/> 
             <Routes>
-              <Route path="/" element={<Shop/>}/>
+              <Route path="/pixelworldecommerce" element={<Shop/>}/>
               <Route path="/cart" element={<Cart/>}/>
             </Routes>
+            <Footer></Footer>
           </Router>
         </SearchContextProvider>
       </ShopContextProvider>

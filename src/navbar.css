@@ -9,11 +9,18 @@
 
 .navbar{
     width: 100%;
-    height: 6vh;
+    min-height: 6vh;
     background-color: black;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    .navbar{
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
 
 .navbar a{
@@ -33,6 +40,13 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+@media screen and (max-width:800px) {
+    .links{
+        padding-bottom: 1rem;
+        margin: auto;
+    }
 }
 
 .links a{
@@ -64,23 +78,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
     margin: auto;
     gap: 1rem;
     color: white;
 }
 
+@media screen and (max-width:850px) {
+    .searchContainer{
+        flex-direction: column;
+    }
+
+    .searchContainer a:first-of-type{
+        text-shadow: 2px 4px #6229ff;
+    }
+}
+
 .searchBar{
     display: flex;
     flex-direction: row;
+    min-width: 600px;
 }
+
+@media screen and (max-width: 1200px) {
+    .searchBar{
+        display: flex;
+        flex-direction: row;
+        min-width: 300px;
+    }
+}
+
 .searchBar input{
     height: 2.5rem;
     border-radius: .5rem 0 0 .5rem ;
     padding-left: .5rem;
     outline: none;
-    width: 600px;
+    width: 100%;
+
 }
 
 .searchButton{
@@ -92,4 +125,11 @@
     cursor: pointer;
     height: 2.5rem;
     width: 50px;
+    
+
+    transition: background-color .2s;
+}
+
+.searchButton:hover{
+    background-color: #895eff;
 }

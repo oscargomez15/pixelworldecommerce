@@ -3,7 +3,7 @@ import axios from 'axios';
 import { GameCard } from '../../components/GameCard';
 import { Loader } from '../../Loader';
 import { SearchContext } from '../../Context/SearchContext';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import './Shop.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,7 +14,7 @@ const Shop = () => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(false);
   const {getSearch} = useContext(SearchContext);
-  const {lastGameAdded} = useContext(ShopContext);
+  const {lastGameAdded, isAlertVisible} = useContext(ShopContext);
   const [page, setPage] = useState(1);
   
   const apiKey = 'e363bfeec2fc4131bc6e9e8c258d5a99';
@@ -65,16 +65,17 @@ const Shop = () => {
           {loading && <Loader> </Loader>}
         </div>
 
+        {isAlertVisible && 
         <div className='addedModal'>
           <FontAwesomeIcon icon={faCartShopping} size='xl' bounce />
           <p> {lastGameAdded} has been added to your cart. </p>
-        </div>
+        </div>}
 
         <div className='pagination'>
           {page > 1 ?
               <div className='pageBtn' onClick={prevPage}> Previous </div>
               : <div></div>}
-          <div className='pageBtn' onClick={nextPage}> Next </div>
+          <div className='pageBtn' tabIndex='0' onClick={nextPage}> Next </div>
         </div>
     </div>
   )

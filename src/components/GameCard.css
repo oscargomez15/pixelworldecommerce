@@ -3,17 +3,28 @@
 *{
     font-family: Poppins, sans-serif;
 }
+
 .gameCard{
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     gap: 1rem;
     padding: 1rem;
+
     width: 500px;
+    min-width: 300px;
+    height: 600px;
+
     background-color: black;
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    height: 600px;
+}
+
+@media screen and (max-width: 600px) {
+    .gameCard{
+        margin: 0 1rem;
+    }
 }
 
 .gameTitle{
@@ -47,6 +58,10 @@
     transition: background-color .2s;
 }
 
+.addToCart:focus{
+    background-color: #ad90ff;
+}
+
 .addToCart:hover{
     cursor: pointer;
     background-color: #895eff;
@@ -74,6 +89,10 @@
 .platform-name:hover{
     cursor: pointer;
     background-color: #6229ff;
+}
+
+.platform-name-selected{
+    background-color: red;
 }
 
 .cardButtonSection{
