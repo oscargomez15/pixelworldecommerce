@@ -25,18 +25,22 @@ export const ShopContextProvider = (props) => {
             subtotal = subtotal + (product.gamePrice * product.quantity);
         })
 
-        return subtotal;
+        return subtotal.toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits:2});
     }
 
     const getCartTax = () => {
         let cartTax = 0;
-        cartTax = (getCartSubtotal() * Number(0.065)).toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2});
+        let convertedSubtotal = getCartSubtotal().replace(/,/g, "");
+
+        cartTax = (convertedSubtotal * Number(0.065)).toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2});            
+        
         return cartTax;
     }
 
     const getTotal = () => {
         let cartTotal = 0;
-        cartTotal = parseFloat(getCartSubtotal()) + parseFloat(getCartTax());
+        cartTotal = (parseFloat(getCartSubtotal().replace(/,/g, ""))) + parseFloat(getCartTax());
+        cartTotal = cartTotal.toLocaleString("en-US",{maximumFractionDigits: 2, minimumFractionDigits:2});
         return cartTotal;
     }
 

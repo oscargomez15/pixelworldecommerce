@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
-import { ShopContext } from '../../Context/ShopContext';
+import { ShopContext } from '../../context/ShopContext';
 import './Cart.css'
 import { CartItem } from './CartItem';
+import {Link } from 'react-router-dom';
+import { TotalBox } from './TotalBox';
 
 const Cart = () => {
   const {cartItems, getCartSubtotal, getCartTax, getTotal} = useContext(ShopContext);
@@ -20,40 +22,11 @@ const Cart = () => {
                
             <div className='breakdownContainer'>
               <h1> Total </h1>
-            <div className='breakdown'>
-              {cartItems.map((item)=>{
-                return (
-                  
-                <div className='itemRow' key={item.name}>
-                  <p>{item.name} (x {item.quantity}) </p> 
-                  <p> ${item.gamePrice}</p>
-                </div>)
-
-              })}
-
-              <div className='itemRow divider'>
-                <p> Subtotal ( {cartItems.length} Items )</p>
-                <p> ${getCartSubtotal()} </p>
-              </div>
-
-              <div className='itemRow'>
-                <p> Pixel County Tax (6.5%)</p>
-                <p> ${getCartTax()} </p>
-              </div>
-
-
-              <div className='itemRow divider'>
-                <p> <strong>Total</strong> </p>
-                <p> <strong>${getTotal()}</strong></p>
-              </div>
-
-              </div>
-
-              <p className='checkoutBtn'> Proceed to Checkout</p>
-
+              <TotalBox></TotalBox>
+              <Link to='/checkout' className='checkoutBtn' onClick={() => {window.scrollTo({top:0,behavior:'smooth'})}}>
+                Proceed to Checkout
+              </Link>
           </div>
-
-
       </div> : <h1 className='emptyCart'> You cart is empty</h1>}
     </div>
   )

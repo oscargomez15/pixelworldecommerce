@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './GameCard.css'
-import { ShopContext } from '../Context/ShopContext'
+import { ShopContext } from '../context/ShopContext'
 
 export const GameCard = ({id, name, image, platforms, release}) => {
     const {addToCart, cartItems} = useContext(ShopContext);

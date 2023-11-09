@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import { GameCard } from '../../components/GameCard';
 import { Loader } from '../../Loader';
-import { SearchContext } from '../../Context/SearchContext';
+import { SearchContext } from '../../context/SearchContext';
 import { faCartShopping, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import './Shop.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ShopContext } from '../../Context/ShopContext';
+import { ShopContext } from '../../context/ShopContext';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
 
@@ -34,15 +35,17 @@ const Shop = () => {
   }
 
   const nextPage = () =>{
-    setPage(page + 1)
-    console.log(page);
-    window.scrollTo({top:0, behavior:'smooth'})
+    setPage(page + 1);
+    scrollToTop();
   }
 
   const prevPage = () =>{
     setPage(page - 1)
-    console.log(page);
-    window.scrollTo({top:0, behavior:'smooth'})
+    scrollToTop();
+  }
+
+  const scrollToTop = () => {
+    setTimeout(window.scrollTo({top:0, behavior:'smooth'}), 100);
   }
 
 
@@ -66,10 +69,12 @@ const Shop = () => {
         </div>
 
         {isAlertVisible && 
+        <Link to="/cart" onClick={scrollToTop}>
         <div className='addedModal'>
           <FontAwesomeIcon icon={faCartShopping} size='xl' bounce />
           <p> {lastGameAdded} has been added to your cart. </p>
-        </div>}
+        </div>
+        </Link>}
 
         <div className='pagination'>
           {page > 1 ?

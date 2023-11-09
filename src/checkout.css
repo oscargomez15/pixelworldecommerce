@@ -1,0 +1,144 @@
+.checkoutContainer{
+    display: flex;
+    padding: 8vh 0;
+}
+
+@media screen and (max-width:1280px) {
+    .checkoutContainer{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 25vh;
+    }
+}
+
+.formHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.formHeading a{
+    position: absolute;
+    left: 0;
+}
+
+.checkoutForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+    min-height: 85vh;
+}
+
+.checkoutForm .returnArrow{
+    border: 2px solid white;
+    background-color: #6229ff;
+    padding: .5rem .75rem;
+    border-radius: 2rem;
+    transition: background-color .2s;
+    color: white;
+    justify-self: self-start;
+}
+
+.returnArrow:hover{
+    cursor: pointer;
+    background-color: #895eff;
+}
+
+fieldset{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    border-radius: 1rem;
+    border: 2rem solid black;
+    background-color: black;
+
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+
+    transition: box-shadow .2s;
+}
+
+fieldset:hover{
+    box-shadow: rgba(98, 41, 255, 0.4) 5px 5px, rgba(98, 41, 255, 0.3) 10px 10px, rgba(98, 41, 255, 0.2) 15px 15px, rgba(98, 41, 255, 0.1) 20px 20px, rgba(98, 41, 255, 0.05) 25px 25px;
+}
+
+.formSection{
+    width: 50%;
+}
+
+@media screen and (max-width:1280px) {
+    .formSection{
+        width: 100%;
+    }
+
+    .checkoutForm{
+        width: 85%;
+    }
+}
+
+.formSubsection{
+    display: flex;
+    justify-content: space-between;
+}
+
+.formSubsection input{
+    max-width: 75%;
+}
+
+.formField{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.formField:last-of-type{
+    margin-bottom: 0;
+}
+
+.addressField{
+    display: flex;
+    flex-direction: row;
+}
+
+label{
+    font-weight: 600;
+    color: white;
+}
+
+.formField input{
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    width: 100%;
+    border-radius: .2rem;
+    height: 2.5rem;
+    border: 1px solid rgb(151, 151, 151);
+}
+
+.placeOrderBtn{
+    background-color: #6229ff;
+    color: white;
+    border-radius: 3px;
+    padding: .5rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: background-color .2s;
+    width: fit-content;
+}
+
+.placeOrderBtn:hover{
+    cursor: pointer;
+    background-color: #895eff;
+}
+
+.totalCheckout{
+ margin-right: 10px;   
+}

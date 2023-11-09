@@ -7,15 +7,19 @@ const footer = () => {
   return (
     <div className='footer-container'>
         <div className='devLogo'>
-            <p className='initials'> OG </p>
-            <p className='fullName'> Oscar Gomez </p>
+            <div className='initialsGroup'>
+                <p className='initials'> O </p>
+                <div className='initialsDivision'> </div>
+                <p className='initials'> G </p>
+            </div>
+            <p> Website developed by Oscar Gomez. </p>
         </div>
 
         <div className='footer-info-container'>
 
             <div className='projectDisclaimer'>
                 <p>This is a experimental project and should be treated as such.</p>
-                <p>Found a bug? You can report it here.</p>
+                {/*<p>Found a bug? You can report it here.</p>*/}
             </div>
 
             <div className='otherLinks'>

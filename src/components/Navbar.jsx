@@ -1,22 +1,26 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { SearchContext } from '../Context/SearchContext';
+import { SearchContext } from '../context/SearchContext';
 import '../navbar.css';
 import { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { ShopContext } from '../context/ShopContext';
 
 const Navbar = () => {
   const {modifySearch, clearSearch} = useContext(SearchContext);
-  const searchInput = useRef();
+  const {cartItems} = useContext(ShopContext);
+  const searchRef = useRef();
+  const [inputLength, setInputLength] = useState(0);
 
   const search = () => {
-    modifySearch(searchInput.current.value);
+    modifySearch(searchRef.current.value);
+    scrollToTop();
   }
 
   const resetSearch = () => {
-    clearSearch();
-    searchInput.target.value('');
+    searchRef.current.value = '';
+    setInputLength(0);
   }
 
   const handleKeyDown = (e) =>{
@@ -25,21 +29,39 @@ const Navbar = () => {
     }
   }
 
+  const scrollToTop = () => {
+    window.scrollTo({top:0, behavior:'smooth'})
+  }
+
+  const resetAndScroll = () => {
+    scrollToTop();
+    resetSearch();
+    modifySearch('');
+  }
+
+  const handleChange = () => {
+    setInputLength(searchRef.current.value.length);
+  }
+
   return (
     <div className='navbar'>
+
             <div className='searchContainer'>
-              <Link to="/pixelworldecommerce" onClick={resetSearch}> PIXEL WORLD </Link>
+              <Link to="/pixelworldecommerce" onClick={resetAndScroll}> PIXEL WORLD </Link>
               <div className='searchBar'> 
-                <input type='text' placeholder='Search Games' ref={searchInput} onKeyDown={handleKeyDown}></input>
+                {inputLength > 0 ? <p onClick={resetSearch} className='clearSearch'> X </p> : <></>}
+                <input type='text' placeholder='Search Games' ref={searchRef} onKeyDown={handleKeyDown} onChange={handleChange} autoFocus></input>
                 <div tabIndex={0} className='searchButton' onClick={search} onKeyDown={handleKeyDown}>
                   <FontAwesomeIcon icon={faMagnifyingGlass} /> 
                 </div>
               </div>
             </div>
+
       <div className='links'>
-        <Link to="/pixelworldecommerce"> GAMES </Link>
-        <Link to="/cart" className='cartBtn'> CART </Link>
+        <Link to="/pixelworldecommerce" onClick={resetAndScroll}> GAMES </Link>
+        <Link to="/cart" className='cartBtn' onClick={resetAndScroll}> CART { cartItems.length > 0 && <sup className='itemsCount'>{cartItems.length}</sup>} </Link>
       </div>
+
     </div>
   )
 }

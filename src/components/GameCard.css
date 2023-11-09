@@ -24,6 +24,7 @@
 @media screen and (max-width: 600px) {
     .gameCard{
         margin: 0 1rem;
+        min-height: fit-content;
     }
 }
 
@@ -91,7 +92,7 @@
     background-color: #6229ff;
 }
 
-.platform-name-selected{
+.platform-name:focus{
     background-color: red;
 }
 
