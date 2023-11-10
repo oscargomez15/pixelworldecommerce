@@ -21,11 +21,13 @@ const Navbar = () => {
   const resetSearch = () => {
     searchRef.current.value = '';
     setInputLength(0);
+    searchRef.current.focus();
   }
 
   const handleKeyDown = (e) =>{
     if (e.key === 'Enter') {
       search();
+      searchRef.current.blur();
     }
   }
 

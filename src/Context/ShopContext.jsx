@@ -1,12 +1,17 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props) => {
 
-    const [cartItems, setCartItems] = useState([]);
+    let [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('savedCart')));
     const [lastGameAdded, setLastGame] = useState('');
     const [isAlertVisible, setAlert] = useState(false);
+
+
+    useEffect(()=>{
+        localStorage.setItem('savedCart',JSON.stringify(cartItems));
+    }, [cartItems]);
 
     const getProductQuantity = (itemId) => {
         const quantity = cartItems.find(item => item.id === itemId)?.quantity
@@ -52,7 +57,6 @@ export const ShopContextProvider = (props) => {
         const quantity = getProductQuantity(itemId);
 
         setLastGame(gameName);
-        
         setAlert(true);
 
         setTimeout(() => {
@@ -80,6 +84,7 @@ export const ShopContextProvider = (props) => {
                     ? {...item, quantity: item.quantity + 1 }
                     : item))
         }
+
     }
 
     const deleteFromCart = (itemId) => {
