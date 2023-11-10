@@ -61,7 +61,7 @@ const Navbar = () => {
 
       <div className='links'>
         <Link to="/" onClick={resetAndScroll}> GAMES </Link>
-        <Link to="/cart" className='cartBtn' onClick={resetAndScroll}> CART { cartItems.length > 0 && <sup className='itemsCount'>{cartItems.length}</sup>} </Link>
+        <Link to="/cart" className='cartBtn' onClick={resetAndScroll}> CART { cartItems?.length > 0 && <sup className='itemsCount'>{cartItems.length}</sup>} </Link>
       </div>
 
     </div>
