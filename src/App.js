@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, BrowserRouter  } from "react-router-dom";
 import  Navbar  from "./components/Navbar";
 import  Shop  from "./pages/shop/Shop"
 import  Cart  from "./pages/cart/Cart"
@@ -13,15 +13,15 @@ function App() {
     <div className="App">
       <ShopContextProvider>
         <SearchContextProvider>
-          <Router>
+          <BrowserRouter basename="/pixelworldecommerce">
             <Navbar/> 
             <Routes>
-              <Route path="/pixelworldecommerce" element={<Shop/>}/>
-              <Route path="/cart" element={<Cart/>}/>
-              <Route path="/checkout" element={<Checkout/>}/>
+                <Route path="/" element={<Shop/>}/>
+                <Route path="/cart" element={<Cart/>}/>
+                <Route path="/checkout" element={<Checkout/>}/>
             </Routes>
             <Footer></Footer>
-          </Router>
+          </BrowserRouter>
         </SearchContextProvider>
       </ShopContextProvider>
     </div>

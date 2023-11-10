@@ -49,7 +49,7 @@ const Navbar = () => {
     <div className='navbar'>
 
             <div className='searchContainer'>
-              <Link to="/pixelworldecommerce" onClick={resetAndScroll}> PIXEL WORLD </Link>
+              <Link to="/" onClick={resetAndScroll}> PIXEL WORLD </Link>
               <div className='searchBar'> 
                 {inputLength > 0 ? <p onClick={resetSearch} className='clearSearch'> X </p> : <></>}
                 <input type='text' placeholder='Search Games' ref={searchRef} onKeyDown={handleKeyDown} onChange={handleChange} autoFocus></input>
@@ -60,7 +60,7 @@ const Navbar = () => {
             </div>
 
       <div className='links'>
-        <Link to="/pixelworldecommerce" onClick={resetAndScroll}> GAMES </Link>
+        <Link to="/" onClick={resetAndScroll}> GAMES </Link>
         <Link to="/cart" className='cartBtn' onClick={resetAndScroll}> CART { cartItems.length > 0 && <sup className='itemsCount'>{cartItems.length}</sup>} </Link>
       </div>
 
