@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormField } from './FormField'
 import '../checkout.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
@@ -7,6 +8,36 @@ import { TotalBox } from '../pages/cart/TotalBox'
 import axios from 'axios'
 
 export const Checkout = () => {
+    const contactInfo = [
+        {
+            labelLink:"firstName",
+            label:"First Name",
+            type:"text",
+            regex:"^[A-Za-z ,.'-]+$",
+            error:"Numbers and Symbols are not allowed.",
+        },
+        {
+            labelLink:"lastName",
+            label:"Last Name",
+            type:"text",
+            regex:"^[A-Za-z ,.'-]+$",
+            error:"Numbers and Symbols are not allowed.",
+        },
+        {
+            labelLink:"email",
+            label:"Email",
+            type:"email",
+            regex:"[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$",
+            error:"Please enter a valid email address."
+        },
+        {
+            labelLink:"phoneNumber",
+            label:"Phone Number",
+            type:"text",
+            regex:"^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$",
+            error:"Enter a valid phone number."
+        }
+    ]
     const userId = "73FLORI43K641"
     const userPass = "B5556IP99S4636O"
     const xml = `<PriorityMailRequest USERID=${userId}><OriginZip>90201</OriginZip><DestinationZip>21114</DestinationZip></PriorityMailRequest>`
@@ -18,9 +49,19 @@ export const Checkout = () => {
         console.log(res.data)
     })
 
+    const handleClick = () => {
+        alert("Order has been placed");
+    }
+
+    const handleChange = (e, minLength) => {
+        console.log(e.target.value.length);
+        e.target.value.length > minLength ? console.log("You're all set") :  console.log("Hey your item is too short") ;
+    }
+
   return (
     <div className='checkoutContainer'>
         <div className='checkoutForm'>
+            
             <div className='formHeading'> 
                 <Link to="/cart">
                     <div className='returnArrow'>
@@ -29,47 +70,47 @@ export const Checkout = () => {
                 </Link>
                 <h1> Contact </h1>
             </div>
+
             <fieldset>
                 <div className='formSection'>
-                    <div className='formField'>
-                        <label for='firstName'> First Name </label>
-                        <input type='text' id='firstName'></input>
-                    </div>
-
-                    <div className='formField'>
-                        <label for='lastName'> Last Name </label>
-                        <input type='text' id='lastName'></input>
-                    </div>
-
-                    <div className='formField'>
-                        <label for='phoneNumber'> Phone Number </label>
-                        <input type='text' id='phoneNumber'></input>
-                    </div>
+                {contactInfo.map((item) => {
+                        return <FormField 
+                        labelLink={item.labelLink}
+                        label={item.label}
+                        type={item.type}
+                        regex={item.regex}
+                        error={item.error}/>
+                    })}
                 </div>
             </fieldset>
 
             <h1> Shipping </h1>
             <fieldset>
                 <div className='formSection'>
-                    <div className='formField'>
-                        <label for='address'> Address </label>
-                        <input type='text' id='address'></input>
-                    </div>
 
+                    <FormField 
+                    labelLink="address"
+                    label="Address"
+                    type="text"/>
 
                     <div className='formSubsection'>
-                        <div className='formField'>
-                            <label for='city'> City</label>
-                            <input type='text' id='city'></input>
-                        </div>
+                        <FormField
+                        labelLink="city"
+                        label="City"
+                        type="text"
+                        error="Letters and Symbols are not allowed" />
+
+                        
 
                         <div className='formField'>
                             <label for='state'> State</label>
                             <input type='text' id='state'></input>
+                            <p className='formError'>Symbols and Numbers are not allowed.</p>
                         </div>
                         <div className='formField'>
                             <label for='zip'> Zip </label>
                             <input type='text' id='zip'></input>
+                            <p className='formError'>Not a valid Zip Code.</p>
                         </div>
                     </div>
 
@@ -103,12 +144,12 @@ export const Checkout = () => {
                 </div>
             </fieldset>
 
-            <div className='placeOrderBtn'> 
+            <div className='placeOrderBtn' onClick={handleClick}> 
                 <p> Place Order </p>
             </div>
         </div>
         <div className='totalCheckout'>
-            <h1>Total </h1>
+            <h1> Total </h1>
             <TotalBox/>
         </div>
     </div>

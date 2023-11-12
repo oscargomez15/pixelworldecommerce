@@ -4,7 +4,7 @@ import { ShopContext } from '../context/ShopContext'
 
 export const GameCard = ({id, name, image, platforms, release}) => {
     const {addToCart, cartItems} = useContext(ShopContext);
-    const {itemAmount, setItemAmount} = useState(cartItems.find(item => item.id === id)?.quantity)
+    const {itemAmount, setItemAmount} = useState(cartItems?.find(item => item.id === id)?.quantity)
 
     const releaseYear = new Date(release).getFullYear();
     let priceBasedOnRelease = 0;

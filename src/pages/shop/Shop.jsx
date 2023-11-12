@@ -45,8 +45,8 @@ const Shop = () => {
   }
 
   const scrollToTop = () => {
-    //setTimeout(window.scrollTo({top:0, behavior:'smooth'}), 100);
-    setTimeout(window.scrollIntoView({top:0, behavior:'smooth'}), 100);
+    setTimeout(window.scrollTo({top:0, behavior:'smooth'}), 100);
+    //setTimeout(window.scrollIntoView({top:0, behavior:'smooth'}), 100);
 
   }
 

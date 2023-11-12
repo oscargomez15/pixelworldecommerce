@@ -4,7 +4,7 @@ export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props) => {
 
-    let [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('savedCart')));
+    let [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('savedCart')) || []);
     const [lastGameAdded, setLastGame] = useState('');
     const [isAlertVisible, setAlert] = useState(false);
 
