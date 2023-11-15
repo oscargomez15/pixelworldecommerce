@@ -1,21 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import { GameCard } from '../../components/GameCard';
 import { Loader } from '../../Loader';
+
 import { SearchContext } from '../../context/SearchContext';
-import { faCartShopping, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { DataContext } from '../../context/DataContext';
+import { ShopContext } from '../../context/ShopContext';
+
 import './Shop.css';
 
+import { faCartShopping, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ShopContext } from '../../context/ShopContext';
 import { Link } from 'react-router-dom';
 
 const Shop = () => {
+  const {changeData, data, setData} = useContext(DataContext);
+  const {lastGameAdded, isAlertVisible} = useContext(ShopContext);
+  const {getSearch} = useContext(SearchContext);
 
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(false);
-  const {getSearch} = useContext(SearchContext);
-  const {lastGameAdded, isAlertVisible} = useContext(ShopContext);
   const [page, setPage] = useState(1);
   
   const apiKey = 'e363bfeec2fc4131bc6e9e8c258d5a99';
@@ -46,10 +50,7 @@ const Shop = () => {
 
   const scrollToTop = () => {
     setTimeout(window.scrollTo({top:0, behavior:'smooth'}), 100);
-    //setTimeout(window.scrollIntoView({top:0, behavior:'smooth'}), 100);
-
   }
-
 
   useEffect(()=>{
     searchGame();

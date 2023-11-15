@@ -38,6 +38,7 @@ export const Checkout = () => {
             error:"Enter a valid phone number."
         }
     ]
+
     const userId = "73FLORI43K641"
     const userPass = "B5556IP99S4636O"
     const xml = `<PriorityMailRequest USERID=${userId}><OriginZip>90201</OriginZip><DestinationZip>21114</DestinationZip></PriorityMailRequest>`
@@ -53,9 +54,8 @@ export const Checkout = () => {
         alert("Order has been placed");
     }
 
-    const handleChange = (e, minLength) => {
-        console.log(e.target.value.length);
-        e.target.value.length > minLength ? console.log("You're all set") :  console.log("Hey your item is too short") ;
+    const getFormValidation = () => {
+        console.log("Function triggered from Child");
     }
 
   return (
@@ -79,7 +79,8 @@ export const Checkout = () => {
                         label={item.label}
                         type={item.type}
                         regex={item.regex}
-                        error={item.error}/>
+                        error={item.error}
+                        formValidation={getFormValidation}/>
                     })}
                 </div>
             </fieldset>

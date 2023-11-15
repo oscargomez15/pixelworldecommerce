@@ -8,7 +8,6 @@ export const ShopContextProvider = (props) => {
     const [lastGameAdded, setLastGame] = useState('');
     const [isAlertVisible, setAlert] = useState(false);
 
-
     useEffect(()=>{
         localStorage.setItem('savedCart',JSON.stringify(cartItems));
     }, [cartItems]);

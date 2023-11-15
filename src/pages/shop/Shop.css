@@ -6,7 +6,7 @@
 
 @media screen and (max-width:900px) {
     .shop{
-        padding-top: 20vh;
+        padding-top: 25vh;
     }
 }
 
@@ -52,7 +52,7 @@
 
     .addedModal{
         padding: 0.5rem 1rem;
-        top:22%;
+        top:25%;
     }
 
     .addedModal p{

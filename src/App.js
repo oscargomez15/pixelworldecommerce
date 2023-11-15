@@ -5,6 +5,7 @@ import  Shop  from "./pages/shop/Shop"
 import  Cart  from "./pages/cart/Cart"
 import { ShopContextProvider } from "./context/ShopContext";
 import { SearchContextProvider } from "./context/SearchContext";
+import { DataContextProvider } from "./context/DataContext";
 import Footer from "./Footer";
 import { Checkout } from "./components/Checkout";
 
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <ShopContextProvider>
         <SearchContextProvider>
+          <DataContextProvider>
           <BrowserRouter basename="/pixelworldecommerce">
             <Navbar/> 
             <Routes>
@@ -22,6 +24,7 @@ function App() {
             </Routes>
             <Footer></Footer>
           </BrowserRouter>
+          </DataContextProvider>
         </SearchContextProvider>
       </ShopContextProvider>
     </div>
