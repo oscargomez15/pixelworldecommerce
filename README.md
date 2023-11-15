@@ -21,4 +21,11 @@ videogames and its data by using the RAWG API. Users are able to:
 - Clear Cart after checkout has been completed.
 - Save cart on Local Storage meaning that a cart can be saved even if tab, or window is closed.
 
+There are other functionalities that are in the making such as:
+- Allow to place order only if all inputs are valid
+- Integrate USPS Address Verify to validate address and calculate shipping.  
+- Require the selection of a platform before adding to cart
+- Develop a Homepage
 
+Please be aware that incremental changes are being made and bugs might be introduced.
+Feel free ti report them by contacting me through Github.com/oscargomez1998
