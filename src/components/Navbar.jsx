@@ -36,10 +36,6 @@ const Navbar = () => {
     search();
   }
 
-  const clearSuggestion = () => {
-
-  }
-
   const resetSearch = () => {
     searchRef.current.value = '';
     setInputLength(0);
@@ -79,7 +75,7 @@ const Navbar = () => {
 
   const handleBlur = () => {
     setTimeout(() => {
-      setDropdown(false)}, 2000);
+      setDropdown(false)}, 1000);
   }
 
   useEffect (() => {

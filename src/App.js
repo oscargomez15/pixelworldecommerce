@@ -8,6 +8,7 @@ import { SearchContextProvider } from "./context/SearchContext";
 import { DataContextProvider } from "./context/DataContext";
 import Footer from "./Footer";
 import { Checkout } from "./components/Checkout";
+import { OrderPlaced } from "./components/OrderPlaced";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/" element={<Shop/>}/>
                 <Route path="/cart" element={<Cart/>}/>
                 <Route path="/checkout" element={<Checkout/>}/>
+                <Route path="/thankyou" element={<OrderPlaced/>} />
             </Routes>
             <Footer></Footer>
           </BrowserRouter>

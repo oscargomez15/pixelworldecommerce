@@ -27,7 +27,12 @@ const Cart = () => {
                 Proceed to Checkout
               </Link>
           </div>
-      </div> : <h1 className='emptyCart'> You cart is empty</h1>}
+      </div> :
+      <div>
+        <h1 className='emptyCart'> You cart is empty </h1>
+      </div> 
+      
+      }
     </div>
   )
 }

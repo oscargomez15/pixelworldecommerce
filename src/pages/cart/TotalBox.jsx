@@ -19,18 +19,18 @@ export const TotalBox = () => {
 
               <div className='itemRow divider'>
                 <p> Subtotal ( {cartItems.length} Items )</p>
-                <p> ${getCartSubtotal()} </p>
+                <p> ${getCartSubtotal(cartItems)} </p>
               </div>
 
               <div className='itemRow'>
                 <p> Pixel County Tax (6.5%)</p>
-                <p> ${getCartTax()} </p>
+                <p> ${getCartTax(cartItems)} </p>
               </div>
 
 
               <div className='itemRow divider'>
                 <p> <strong>Total</strong> </p>
-                <p> <strong>${getTotal()}</strong></p>
+                <p> <strong>${getTotal(cartItems)}</strong></p>
               </div>
 
               </div> 

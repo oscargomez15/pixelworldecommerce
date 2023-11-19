@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FormField } from './FormField'
 import '../checkout.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,8 +6,13 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { TotalBox } from '../pages/cart/TotalBox'
 import axios from 'axios'
+import { ShopContext } from '../context/ShopContext'
+
+
 
 export const Checkout = () => {
+    const {clearCart} = useContext(ShopContext);
+
     const contactInfo = [
         {
             labelLink:"firstName",
@@ -144,10 +149,10 @@ export const Checkout = () => {
                     </div>
                 </div>
             </fieldset>
-
-            <div className='placeOrderBtn' onClick={handleClick}> 
+            <Link className='placeOrderBtn' to="/thankyou" onClick={clearCart}>
                 <p> Place Order </p>
-            </div>
+            </Link>
+                
         </div>
         <div className='totalCheckout'>
             <h1> Total </h1>

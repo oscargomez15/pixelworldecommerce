@@ -1,0 +1,60 @@
+.orderConfirmed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15vh;
+    min-height: calc(100vh - 200px);
+}
+
+@media screen and (max-width:900px) {
+    .orderConfirmed{
+        padding: 25vh 1rem 0 1rem;
+    }
+
+    .orderConfirmed .orderNumber{
+        align-self: flex-start;
+        background-color: black;
+        color: white;
+        padding: .25rem .5rem ;
+    }
+}
+
+.orderConfirmed a{
+    margin-top: 1rem;
+}
+
+.receiptItems{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.division{
+    border-top: rgb(197, 197, 197) solid 2px;
+}
+
+.receiptRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 100%;
+}
+
+.leftColumn{
+    align-self: flex-start;
+}
+
+.rightColumn{
+    align-self: flex-end;
+}
+
+@media screen and (max-width:900px) {
+    .receiptItems{
+        width: 60%;
+    }
+}

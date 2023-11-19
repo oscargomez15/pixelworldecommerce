@@ -5,6 +5,8 @@ export const ShopContext = createContext(null);
 export const ShopContextProvider = (props) => {
 
     let [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('savedCart')) || []);
+    const [receipt, setReceipt] = useState([]);
+
     const [lastGameAdded, setLastGame] = useState('');
     const [isAlertVisible, setAlert] = useState(false);
 
@@ -21,29 +23,29 @@ export const ShopContextProvider = (props) => {
             return quantity;
     }
 
-    const getCartSubtotal = () => {
+    const getCartSubtotal = (cart) => {
 
         let subtotal = 0;
 
-        cartItems.map(product => {
+        cart?.map(product => {
             subtotal = subtotal + (product.gamePrice * product.quantity);
         })
 
         return subtotal.toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits:2});
     }
 
-    const getCartTax = () => {
+    const getCartTax = (cart) => {
         let cartTax = 0;
-        let convertedSubtotal = getCartSubtotal().replace(/,/g, "");
+        let convertedSubtotal = getCartSubtotal(cart).replace(/,/g, "");
 
         cartTax = (convertedSubtotal * Number(0.065)).toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2});            
         
         return cartTax;
     }
 
-    const getTotal = () => {
+    const getTotal = (cart) => {
         let cartTotal = 0;
-        cartTotal = (parseFloat(getCartSubtotal().replace(/,/g, ""))) + parseFloat(getCartTax());
+        cartTotal = (parseFloat(getCartSubtotal(cart).replace(/,/g, ""))) + parseFloat(getCartTax(cart));
         cartTotal = cartTotal.toLocaleString("en-US",{maximumFractionDigits: 2, minimumFractionDigits:2});
         return cartTotal;
     }
@@ -119,7 +121,12 @@ export const ShopContextProvider = (props) => {
 
     }
 
-    const contextValue = {cartItems, lastGameAdded, isAlertVisible, getCartSubtotal, getCartTax, getTotal, getProductQuantity, addToCart, addOneToQuantity, deleteFromCart, removeOneToQuantity};
+    const clearCart = () =>{
+        setReceipt(cartItems);
+        setCartItems([]);
+    }
+
+    const contextValue = {cartItems, lastGameAdded, isAlertVisible, getCartSubtotal, getCartTax, getTotal, getProductQuantity, addToCart, addOneToQuantity, deleteFromCart, removeOneToQuantity, clearCart, receipt};
 
   return (
     <ShopContext.Provider value={contextValue}>
