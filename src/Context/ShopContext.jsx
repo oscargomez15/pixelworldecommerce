@@ -54,7 +54,7 @@ export const ShopContextProvider = (props) => {
         return lastGameAdded;
     }
 
-    const addToCart = (itemId, gameName, image, price) => {
+    const addToCart = (itemId, gameName, image, price, platform) => {
         const quantity = getProductQuantity(itemId);
 
         setLastGame(gameName);
@@ -73,7 +73,8 @@ export const ShopContextProvider = (props) => {
                         name: gameName,
                         gameImage: image,
                         quantity: 1,
-                        gamePrice:price 
+                        gamePrice: price,
+                        platform: platform,
                     }
                 ]
             )

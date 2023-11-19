@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ShopContext } from '../../context/ShopContext';
 
 
-export const CartItem = ({id, name, image, quantity, price}) => {
+export const CartItem = ({id, name, image, quantity, price, platform}) => {
     const {cartItems, addOneToQuantity, deleteFromCart, removeOneToQuantity} = useContext(ShopContext);
 
   return (
@@ -12,6 +12,7 @@ export const CartItem = ({id, name, image, quantity, price}) => {
       <p className='itemTitle'>{name}</p>
       <hr></hr>
       <div className='cartItemInfo'>
+        <p> {platform}</p>
         <p className='priceText infoBox'> <span className='infoText'> ${price}</span></p>
         <div className='quantityContainer'>
               <span className='modifyQuantity' onClick={() => removeOneToQuantity(id)}>-</span>

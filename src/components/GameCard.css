@@ -96,6 +96,10 @@
     background-color: red;
 }
 
+.platform-name-selected{
+    background-color: #6229ff;
+}
+
 .cardButtonSection{
     display: flex;
     align-items: center;

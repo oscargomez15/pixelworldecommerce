@@ -59,10 +59,6 @@ export const Checkout = () => {
         alert("Order has been placed");
     }
 
-    const getFormValidation = () => {
-        console.log("Function triggered from Child");
-    }
-
   return (
     <div className='checkoutContainer'>
         <div className='checkoutForm'>
@@ -84,8 +80,7 @@ export const Checkout = () => {
                         label={item.label}
                         type={item.type}
                         regex={item.regex}
-                        error={item.error}
-                        formValidation={getFormValidation}/>
+                        error={item.error}/>
                     })}
                 </div>
             </fieldset>
@@ -105,8 +100,6 @@ export const Checkout = () => {
                         label="City"
                         type="text"
                         error="Letters and Symbols are not allowed" />
-
-                        
 
                         <div className='formField'>
                             <label for='state'> State</label>

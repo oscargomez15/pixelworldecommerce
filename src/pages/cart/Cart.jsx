@@ -15,7 +15,7 @@ const Cart = () => {
           <div className='cartItems'>
           <h1> Your Cart Items </h1>
           {cartItems.map((item)=>{
-            return <CartItem id={item.id} name={item.name} image={item.gameImage} quantity={item.quantity} price={item.gamePrice} key={item.name}/>
+            return <CartItem id={item.id} name={item.name} image={item.gameImage} quantity={item.quantity} platform ={item.platform} price={item.gamePrice} key={item.name}/>
           })}
           
           </div>

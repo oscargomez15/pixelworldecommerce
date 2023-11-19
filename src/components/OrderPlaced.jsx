@@ -20,6 +20,7 @@ export const OrderPlaced = () => {
         <p> Your order has been placed. You can find your receipt here:</p>
         <div className='receiptItems'>
           <h1> Pixel World </h1>
+
         {receipt?.map((item) => {
           return(
               <div className='receiptRow'>
@@ -28,6 +29,7 @@ export const OrderPlaced = () => {
               </div>
           )          
         })}
+        
         <div className='receiptRow division'>
           <p className='leftColumn'> Subtotal </p>
           <p className='rightColumn'>${getCartSubtotal(receipt)}</p>

@@ -5,6 +5,10 @@ export const FormField = ({labelLink, label, type, regex, error, formValidation}
     const [hasBeenActivated, setActivation] = useState(false);
     const validation = new RegExp(regex);
 
+    const getValidation = () => {
+      return inputValidation
+    }
+
     const handleChange = (e) => {
         let inputValue = e.target.value;
 
@@ -22,13 +26,12 @@ export const FormField = ({labelLink, label, type, regex, error, formValidation}
     return (
     <div className='formField'>
         <label htmlFor={labelLink}> {label} </label>
-        
         <input 
         type={type} 
-        id={labelLink} 
+        id={labelLink}
         onChange={(e) => {handleChange(e)}} 
         onBlur={(e) => {handleBlur(e)}}></input>
-        {(!inputValidation && hasBeenActivated)? <p className='formError'>{error}</p> : <></>}
+        {(!inputValidation && hasBeenActivated)? <p className='formError'> {error} </p> : <> </>}
 </div>
   )
 }
