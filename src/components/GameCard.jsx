@@ -41,7 +41,6 @@ export const GameCard = ({id, name, image, platforms, release}) => {
             e.target.classList.remove("platform-name-selected")
         }else{
             traverseRefs(e);
-            console.log("deselecting other platform");
         }
     }
     

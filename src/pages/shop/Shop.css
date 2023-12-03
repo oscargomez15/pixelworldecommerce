@@ -12,11 +12,18 @@
 
 .gamesContainer{
     padding: 2rem 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     gap: 5rem 1rem;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 @media screen and (max-width: 1020px) {
@@ -26,8 +33,12 @@
 }
 
 .addedModal{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: fixed;
     top: 8%;
     right: 1%;
@@ -38,9 +49,13 @@
 
     border-radius: 1rem;
     padding: 1rem 2rem;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    -webkit-transition: display .5s;
+    -o-transition: display .5s;
     transition: display .5s;
-    animation: fadeInFadeOut 4s;
+    -webkit-animation: fadeInFadeOut 4s;
+            animation: fadeInFadeOut 4s;
 }
 
 .addedModal p{
@@ -61,17 +76,29 @@
 }
 
 .pagination{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 1rem;
     margin: auto;
 }
 
 .pageBtn{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
     cursor: pointer;
 
@@ -84,6 +111,8 @@
     margin-bottom: 2rem;
     padding: .5rem;
     border-radius: .3rem;
+    -webkit-transition: background-color .2s;
+    -o-transition: background-color .2s;
     transition: background-color .2s;
 }
 
@@ -97,6 +126,24 @@
     background-color: #6229ff;
     position: fixed;
     bottom: 0;
+}
+
+@-webkit-keyframes fadeInFadeOut {
+    0%{
+        opacity: 0;
+    }
+
+    25%{
+        opacity: 100;
+    }
+
+    75%{
+        opacity: 100;
+    }
+
+    100%{
+        opacity: 0;
+    }
 }
 
 @keyframes fadeInFadeOut {

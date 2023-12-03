@@ -1,7 +1,14 @@
 .cartContainer{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: white;
     min-height: 94vh;
     padding-top: 8vh;
@@ -18,8 +25,12 @@
 }
 
 .cart{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
     gap: 5rem;
 }
@@ -27,7 +38,10 @@
 @media screen and (max-width:1200px) {
     .cart{
         gap: 2rem;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 }
 
@@ -44,6 +58,8 @@
 
 .cartItem{
     background-color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -53,9 +69,11 @@
 
 .cartItem img{
     min-height: 50px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 300px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 1rem;
 }
 
@@ -66,9 +84,16 @@
 }
 
 .cartItemTitle{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     color: white;
 }
 
@@ -102,11 +127,18 @@
 }
 
 .cartItemInfo{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .infoBox{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     border-radius: 0 0.5rem 0.5rem 0;
     margin-top: 1rem;
@@ -122,8 +154,11 @@
     color: #FFF;
     padding: 0 .5rem;
     font-size: .9rem;
+    -webkit-transition: background-color .2s;
+    -o-transition: background-color .2s;
     transition: background-color .2s;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .modifyQuantity:last-of-type{
@@ -144,6 +179,8 @@
     padding: 0.2rem 0rem;
     text-decoration: none;
     margin-top: .5rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -154,8 +191,13 @@
 
 .breakdownContainer{
     width: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 @media screen and (max-width:1200px) {
@@ -166,7 +208,8 @@
 }
 
 .breakdownContainer a {
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
 }
 
 .breakdown{
@@ -212,8 +255,13 @@
     padding: .5rem 2rem;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    -webkit-transition: background-color .2s;
+    -o-transition: background-color .2s;
     transition: background-color .2s;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     margin: 1rem auto;
 }
