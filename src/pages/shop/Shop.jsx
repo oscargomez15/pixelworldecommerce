@@ -21,7 +21,7 @@ const Shop = () => {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  
+
   const apiKey = 'e363bfeec2fc4131bc6e9e8c258d5a99';
 
   const searchGame = () => {
@@ -60,18 +60,18 @@ const Shop = () => {
     <div className='shop'>
         <div className='gamesContainer'>
           {!loading && games.map(game => {
-            return <GameCard 
-            id={game.id} 
-            name={game.name} 
-            image={game.background_image} 
-            platforms={game.platforms} 
-            release={game.released} 
-            key={game.name}/>  
+            return <GameCard
+            id={game.id}
+            name={game.name}
+            image={game.background_image}
+            platforms={game.platforms}
+            release={game.released}
+            key={game.name}/>
           })}
           {loading && <Loader> </Loader>}
         </div>
 
-        {isAlertVisible && 
+        {isAlertVisible &&
         <Link to="/cart" onClick={scrollToTop}>
         <div className='addedModal'>
           <FontAwesomeIcon icon={faCartShopping} size='xl' bounce />

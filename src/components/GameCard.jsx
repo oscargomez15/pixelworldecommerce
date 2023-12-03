@@ -43,24 +43,27 @@ export const GameCard = ({id, name, image, platforms, release}) => {
             traverseRefs(e);
         }
     }
-    
   return (
     <div className='gameCard'>
         <h1 className='gameTitle'>{name}</h1>
         <img src={image} alt={name} className='gameImage'></img>
         <p className='gamePrice'>${priceBasedOnRelease}</p>
-        <div className='platforms'> 
+        <div className='platforms'>
             <p>Choose the Platform:</p>
             <div className='platforms-list'>
                 {platforms?.map((platform, index) => {
-                    return <h1 className='platform-name' ref={el => platformRef.current[index] = el } value="platform" key={platform.platform.name} onClick={(e) => {handleClick(e, platform.platform.name)}}> {platform.platform.name} </h1>
+                    return <h1
+                    className='platform-name'
+                    ref={el => platformRef.current[index] = el }
+                    value="platform" key={platform.platform.name}
+                    onClick={(e) => {handleClick(e, platform.platform.name)}}> {platform.platform.name} </h1>
                 })}
             </div>
-        </div> 
+        </div>
 
         { isPlatformSelected && <div className='cardButtonSection'>
             <button tabIndex='0' className='addToCart' onClick={() => addToCart(id,name,image, priceBasedOnRelease, platform)}> Add to Cart </button>
-                {itemAmount > 0 &&  <div className='quantity'> <p> {itemAmount} </p></div>}   
+                {itemAmount > 0 &&  <div className='quantity'> <p> {itemAmount} </p></div>}
         </div>}
     </div>
   )

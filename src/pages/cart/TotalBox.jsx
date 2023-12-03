@@ -9,9 +9,8 @@ export const TotalBox = () => {
         <div className='breakdown'>
               {cartItems.map((item)=>{
                 return (
-                  
                 <div className='itemRow' key={item.name}>
-                  <p>{item.name} (x {item.quantity}) </p> 
+                  <p>{item.name} (x {item.quantity}) </p>
                   <p> ${item.gamePrice}</p>
                 </div>)
 
@@ -32,8 +31,7 @@ export const TotalBox = () => {
                 <p> <strong>Total</strong> </p>
                 <p> <strong>${getTotal(cartItems)}</strong></p>
               </div>
-
-              </div> 
+              </div>
     </div>
   )
 }

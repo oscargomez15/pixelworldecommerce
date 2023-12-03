@@ -27,9 +27,8 @@ export const OrderPlaced = () => {
                 <p className='leftColumn'>{item.name}</p>
                 <p className='rightColumn'>${item.gamePrice}</p>
               </div>
-          )          
+          )
         })}
-        
         <div className='receiptRow division'>
           <p className='leftColumn'> Subtotal </p>
           <p className='rightColumn'>${getCartSubtotal(receipt)}</p>
@@ -44,7 +43,6 @@ export const OrderPlaced = () => {
           <p className='leftColumn'> Amount Paid </p>
           <p className='rightColumn'>${getTotal(receipt)}</p>
         </div>
-        
       </div>
       <Link to="/" > Return to games </Link>
     </div>

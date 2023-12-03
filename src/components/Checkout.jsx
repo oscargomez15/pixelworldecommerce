@@ -62,8 +62,7 @@ export const Checkout = () => {
   return (
     <div className='checkoutContainer'>
         <div className='checkoutForm'>
-            
-            <div className='formHeading'> 
+            <div className='formHeading'>
                 <Link to="/cart">
                     <div className='returnArrow'>
                         <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
@@ -75,7 +74,7 @@ export const Checkout = () => {
             <fieldset>
                 <div className='formSection'>
                 {contactInfo.map((item) => {
-                        return <FormField 
+                        return <FormField
                         labelLink={item.labelLink}
                         label={item.label}
                         type={item.type}
@@ -89,7 +88,7 @@ export const Checkout = () => {
             <fieldset>
                 <div className='formSection'>
 
-                    <FormField 
+                    <FormField
                     labelLink="address"
                     label="Address"
                     type="text"/>
@@ -128,7 +127,6 @@ export const Checkout = () => {
                         <label for='cardNumber'> Credit Card Number </label>
                         <input type='text' id='cardNumber'></input>
                     </div>
-                    
                     <div className='formSubsection'>
                         <div className='formField'>
                             <label for='expiration'> Expiration date </label>
@@ -145,7 +143,6 @@ export const Checkout = () => {
             <Link className='placeOrderBtn' to="/thankyou" onClick={clearCart}>
                 <p> Place Order </p>
             </Link>
-                
         </div>
         <div className='totalCheckout'>
             <h1> Total </h1>

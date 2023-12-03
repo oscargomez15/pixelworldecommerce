@@ -87,14 +87,14 @@ const Navbar = () => {
     <div className='navbar'>
             <Link to="/" onClick={resetAndScroll}> PIXEL WORLD </Link>
             <div className='searchContainer'>
-              <div className='searchBar'> 
+              <div className='searchBar'>
                 {inputLength > 0 ? <p onClick={resetSearch} className='clearSearch'> X </p> : <></>}
                 <input type='text' placeholder='Search Games' ref={searchRef} onKeyDown={handleKeyDown} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur}></input>
                 <div tabIndex={0} className='searchButton' onClick={search} onKeyDown={handleKeyDown}>
-                  <FontAwesomeIcon icon={faMagnifyingGlass} /> 
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </div>
               </div>
-              {isDropdownEnabled && <div className='dropdown'> 
+              {isDropdownEnabled && <div className='dropdown'>
                 {data?.map((item) => {
                   return <p className='suggestionRow' onClick={() => {suggestionSearch(item.name)}}> {item.name} </p>
                 })}

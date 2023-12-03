@@ -10,16 +10,14 @@ const Cart = () => {
 
   return (
     <div className='cartContainer'>
-        {cartItems?.length > 0 ? 
+        {cartItems?.length > 0 ?
         <div className='cart'>
           <div className='cartItems'>
           <h1> Your Cart Items </h1>
           {cartItems.map((item)=>{
             return <CartItem id={item.id} name={item.name} image={item.gameImage} quantity={item.quantity} platform ={item.platform} price={item.gamePrice} key={item.name}/>
           })}
-          
           </div>
-               
             <div className='breakdownContainer'>
               <h1> Total </h1>
               <TotalBox></TotalBox>
@@ -30,8 +28,7 @@ const Cart = () => {
       </div> :
       <div>
         <h1 className='emptyCart'> You cart is empty </h1>
-      </div> 
-      
+      </div>
       }
     </div>
   )

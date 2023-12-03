@@ -6,7 +6,7 @@ export const CartItem = ({id, name, image, quantity, price, platform}) => {
     const {cartItems, addOneToQuantity, deleteFromCart, removeOneToQuantity} = useContext(ShopContext);
 
   return (
-    <div className='cartItem'> 
+    <div className='cartItem'>
     <img src={image} alt={name}></img>
     <div className='cartItemTitle'>
       <p className='itemTitle'>{name}</p>

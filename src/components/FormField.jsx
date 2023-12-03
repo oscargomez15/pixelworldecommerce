@@ -26,10 +26,10 @@ export const FormField = ({labelLink, label, type, regex, error, formValidation}
     return (
     <div className='formField'>
         <label htmlFor={labelLink}> {label} </label>
-        <input 
-        type={type} 
+        <input
+        type={type}
         id={labelLink}
-        onChange={(e) => {handleChange(e)}} 
+        onChange={(e) => {handleChange(e)}}
         onBlur={(e) => {handleBlur(e)}}></input>
         {(!inputValidation && hasBeenActivated)? <p className='formError'> {error} </p> : <> </>}
 </div>

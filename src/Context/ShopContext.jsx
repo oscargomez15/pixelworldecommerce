@@ -38,8 +38,7 @@ export const ShopContextProvider = (props) => {
         let cartTax = 0;
         let convertedSubtotal = getCartSubtotal(cart).replace(/,/g, "");
 
-        cartTax = (convertedSubtotal * Number(0.065)).toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2});            
-        
+        cartTax = (convertedSubtotal * Number(0.065)).toLocaleString("en-US", {maximumFractionDigits: 2, minimumFractionDigits: 2});
         return cartTax;
     }
 
@@ -81,8 +80,8 @@ export const ShopContextProvider = (props) => {
         }else{
             setCartItems(
                 cartItems.map(
-                    (item) => 
-                    item.id === itemId 
+                    (item) =>
+                    item.id === itemId
                     ? {...item, quantity: item.quantity + 1 }
                     : item))
         }
@@ -91,9 +90,9 @@ export const ShopContextProvider = (props) => {
 
     const deleteFromCart = (itemId) => {
         setCartItems(
-            cartProduct => 
+            cartProduct =>
             cartProduct.filter (currentProduct => {
-                return currentProduct.id != itemId; 
+                return currentProduct.id != itemId;
             } )
         );
     }
@@ -101,8 +100,8 @@ export const ShopContextProvider = (props) => {
     const addOneToQuantity = (itemId) => {
         setCartItems(
             cartItems.map(
-                (item) => 
-                item.id === itemId 
+                (item) =>
+                item.id === itemId
                 ? {...item, quantity: item.quantity + 1 }
                 : item))
     }
@@ -114,8 +113,8 @@ export const ShopContextProvider = (props) => {
         }else{
             setCartItems(
                 cartItems.map(
-                    (item) => 
-                    item.id === itemId 
+                    (item) =>
+                    item.id === itemId
                     ? {...item, quantity: item.quantity - 1 }
                     : item))
         }
